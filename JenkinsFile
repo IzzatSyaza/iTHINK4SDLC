@@ -1,4 +1,11 @@
-node {
-   stage 'Run JMeter Test'
-   sh 'C:/Users/pichu/Desktop/UTM/jmeter/bin/jmeter.bat -n -t C:/Users/pichu/Desktop/UTM/JmeterResult/iTHINK4SDLC.jmx -l C:/Users/pichu/Desktop/UTM/JmeterResult/iTHINK4SDLC.jtl'
+pipeline {
+    agent any
+
+    stages {
+        stage('Jmeter Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+    }
 }
