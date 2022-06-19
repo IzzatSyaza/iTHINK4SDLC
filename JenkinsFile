@@ -1,26 +1,4 @@
-pipeline {
-    agent any
-
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Building..'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
-        stage('Run JMETER Test'){
-            steps {
-                bat 'C:/Users/pichu/Desktop/UTM/jmeter/bin/jmeter.bat -n -t C:/Users/pichu/Desktop/UTM/JmeterResult/iTHINK4SDLC.jmx -l C:/Users/pichu/Desktop/UTM/JmeterResult/iTHINK4SDLC.jtl'
-            }
-        }
-    }
+node {
+   stage 'Run JMeter Test'
+   bat 'C:/Users/pichu/Desktop/UTM/jmeter/bin/jmeter.bat -n -t C:/Users/pichu/Desktop/UTM/JmeterResult/iTHINK4SDLC.jmx -l C:/Users/pichu/Desktop/UTM/JmeterResult/iTHINK4SDLC.jtl'
 }
