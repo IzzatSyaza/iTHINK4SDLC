@@ -17,5 +17,8 @@ pipeline {
                 echo 'Deploying....'
             }
         }
+        stage('Run JMETER Test'){
+            bat 'C:/Users/pichu/Desktop/UTM/jmeter/bin/jmeter.bat -n -t C:/Users/pichu/Desktop/UTM/JmeterResult/iTHINK4SDLC.jmx -l C:/Users/pichu/Desktop/UTM/JmeterResult/iTHINK4SDLC.jtl'
+        }
     }
 }
